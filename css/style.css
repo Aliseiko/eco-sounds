@@ -10,6 +10,15 @@
   list-style: none;
 }
 
+a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--color-gold);
+}
+
 body {
   font-family: Roboto, sans-serif;
   font-size: 20px;
@@ -17,14 +26,27 @@ body {
   background-color: #000;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .container {
+  min-width: 760px;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+}
+
+/*---------- HEADER -------------*/
+
+.header-container {
+  padding: 5px 20px;
 }
 
 .nav__list {
   display: flex;
+  gap: 40px;
 }
 
 .logo {
@@ -44,7 +66,7 @@ body {
 }
 
 .nav__item {
-  padding: 0 20px;
+  /*padding: 0 20px;*/
   line-height: 2.5;
   transition: 0.3s;
   cursor: pointer;
@@ -52,4 +74,69 @@ body {
 
 .nav__item:hover {
   color: var(--color-gold);
+}
+
+/*---------- MAIN -------------*/
+
+.main__container {
+  width: 100vw;
+  height: calc(100vh - 120px);
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.main__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*---------- FOOTER -------------*/
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+
+.footer__copyright {
+  display: flex;
+  line-height: 2.5;
+  gap: 20px;
+}
+
+.rsschool__img {
+  height: 35px;
+  transition: 0.3s;
+  fill: #fff;
+}
+
+.rsschool__img:hover {
+  fill: var(--color-gold);
+}
+
+.footer__player {
+  display: flex;
+  gap: 40px;
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+}
+
+.player__play-pause-button-img,
+.player__download-button-img {
+  height: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  fill: #fff;
+}
+
+.player__play-pause-button-img:hover,
+.player__download-button-img:hover {
+  fill: var(--color-gold);
 }
