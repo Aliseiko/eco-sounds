@@ -66,7 +66,6 @@ body {
 }
 
 .nav__item {
-  /*padding: 0 20px;*/
   line-height: 2.5;
   transition: 0.3s;
   cursor: pointer;
@@ -74,6 +73,14 @@ body {
 
 .nav__item:hover {
   color: var(--color-gold);
+}
+
+.active {
+  color: var(--color-gold);
+}
+
+.active .logo__img {
+  fill: var(--color-gold);
 }
 
 /*---------- MAIN -------------*/
