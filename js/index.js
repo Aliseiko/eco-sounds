@@ -16,9 +16,11 @@ function changeImg(bird) {
     addActiveClass(bird + '-img');
 }
 
+// ------------- change img and mark active menu item ----------
+
 document.querySelector('.nav__list').addEventListener('click', (event) => {
-    if (event.target.classList.contains('menu__item')) {
-        markActiveMenuItem(event.target.dataset.bird);
-        changeImg(event.target.dataset.bird);
+    if (event.target.closest('.nav__item')) {
+        markActiveMenuItem(event.target.closest('.nav__item').dataset.bird);
+        changeImg(event.target.closest('.nav__item').dataset.bird);
     }
 })
