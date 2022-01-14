@@ -142,7 +142,9 @@ body {
 }
 
 .player__play-pause-button-img,
+.player__play-pause-button-img,
 .player__download-button-img {
+  display: none;
   height: 30px;
   transition: 0.3s;
   cursor: pointer;
@@ -150,6 +152,11 @@ body {
 }
 
 .player__play-pause-button-img:hover,
+.player__play-pause-button-img:hover,
 .player__download-button-img:hover {
   fill: var(--color-gold);
+}
+
+.active-button {
+  display: block;
 }
