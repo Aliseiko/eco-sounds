@@ -30,7 +30,7 @@ document.querySelector('.nav__list').addEventListener('click', (event) => {
         markActiveMenuItem(currentBird);
         setAudioSrc(currentBird);
         changeImg(currentBird);
-        if (isPlay) playAudio();
+        playAudio();
         setDownloadLink(currentBird);
     }
 })
@@ -41,11 +41,13 @@ function playAudio() {
     audio.currentTime = 0;
     audio.play();
     isPlay = true;
+    setActivePlayButton();
 }
 
 function pauseAudio() {
     audio.pause();
     isPlay = false;
+    setActivePlayButton();
 }
 
 function setAudioSrc(bird) {
@@ -60,7 +62,6 @@ function setActivePlayButton() {
 playButton.addEventListener('click', (event) => {
     if (event.target.closest('.player__play-pause-button')) {
         (isPlay) ? pauseAudio() : playAudio();
-        setActivePlayButton();
     }
 })
 
@@ -69,3 +70,22 @@ playButton.addEventListener('click', (event) => {
 function setDownloadLink(bird) {
     document.querySelector('.download-link').href = `assets/audio/${bird}.mp3`;
 }
+
+// ----------------- work self-assessment -----------------
+
+console.log('Самооценка:\n' +
+    '1. Вёрстка, дизайн, UI +20\n' +
+    '        внешний вид приложения соответствует предложенному образцу или является его улучшенной версией +5\n' +
+    '        вёрстка адаптивная. Отсутствует горизонтальная полоса прокрутки при ширине страницы от 1920рх до 768рх +5\n' +
+    '        интерактивность элементов, с которыми пользователи могут взаимодействовать, изменение внешнего вида самого элемента и состояния курсора при наведении, использование разных стилей для активного и неактивного состояния элемента, плавные анимации +5\n' +
+    '        в футере приложения есть ссылка на гитхаб автора приложения, год создания приложения, логотип курса со ссылкой на курс +5\n' +
+    '2. При кликах по названиям птиц в навигации меняется фоновое изображение +10\n' +
+    '        при кликах по названиях птиц меняется изображение +5\n' +
+    '        изменение изображения происходит плавно, изображение сначала загружается, потом отображается, нет ситуаций, когда пользователь видит частично загрузившиеся изображение +5\n' +
+    '3. При кликах по названиям птиц в навигации проигрываются голоса этих птиц +10\n' +
+    '4. Название птицы, голос которой в данный момент проигрывается, выделяется стилем +10\n' +
+    '5. Кнопка Play/Pause +10\n' +
+    '        есть кнопка Play/Pause при клике по которой можно запустить или остановить проигрывание звука +5\n' +
+    '        внешний вид и функционал кнопки изменяется в зависимости от того, проигрывается ли в данный момент звук +5\n' +
+    '6. Есть кнопка Download при клике по которой можно скачать аудиофайл с голосом птицы +5\n' +
+    '\nИтого: 65 баллов')
