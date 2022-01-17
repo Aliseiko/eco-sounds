@@ -1,6 +1,5 @@
 const audio = document.querySelector('audio'),
-    playButton = document.querySelector('.player__play-pause-button'),
-    downloadButton = document.querySelector('.player__download-button');
+    playButton = document.querySelector('.player__play-pause-button');
 let isPlay = false;
 
 
@@ -59,11 +58,9 @@ function setActivePlayButton() {
     document.querySelector(`.${(isPlay) ? 'pause-button' : 'play-button'}`).classList.add('active-button');
 }
 
-playButton.addEventListener('click', (event) => {
-    if (event.target.closest('.player__play-pause-button')) {
-        (isPlay) ? pauseAudio() : playAudio();
-    }
-})
+playButton.onclick = function () {
+    (isPlay) ? pauseAudio() : playAudio();
+}
 
 // ----------------- download sound -----------------------
 
